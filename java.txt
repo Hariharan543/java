@@ -1,0 +1,2814 @@
+	no 7
+
+public class Fieldcode {
+	public int x=23;
+	protected String companyName="DSRC";
+	private int y=4;
+	
+	public String deleteEmployee()
+	{
+		return(companyName);
+	}
+	public int sum()
+	{   
+		return x+y;
+	}
+}
+
+no  18
+
+public class CarDetails {
+	public int carID=1;
+	public String carName="Alto";
+	public final double carPrice=500000;
+	
+public String displayCarDetails()
+{
+	return(carName+carPrice);
+}
+}
+
+no 20
+
+
+public class Encaps {
+
+private String Name;
+private int Roll;
+private int Age;
+public String getName() {
+	return Name;
+}
+public void setName(String name) {
+	Name = name;
+}
+public int getRoll() {
+	return Roll;
+}
+public void setRoll(int roll) {
+	Roll = roll;
+}
+public int getAge() {
+	return Age;
+}
+public void setAge(int age) {
+	Age = age;
+}
+}
+
+
+
+public class Mainmethod {
+	
+	Encaps m=new Encaps();
+	String name=m.getName();
+	int roll=m.getRoll();
+	int age=m.getAge();
+}
+
+
+
+
+
+day 3
+
+no 8
+
+public class Animal {
+	String run()
+	{
+		return "Animal has four legs";
+	}
+}
+class Dog extends Animal {
+	String bark()
+	{
+		return "Dog is barking";
+	}
+}
+class BabyDog extends Dog
+{
+	String Drink()
+	{
+		return "BabyDog drinks milk";
+	}
+	public static void main(String[] args) {
+		
+		BabyDog bg=new BabyDog();
+		System.out.println(bg.Drink());
+	}
+}
+
+
+no 10
+
+public class Animal {
+	protected int numOfAnimals;
+	
+	public Animal(){
+		numOfAnimals=2;
+	}
+	 void legd()
+	{
+		
+	}
+
+}
+class Dog extends Animal{
+	protected int numOfDogs;
+	
+	public Dog()
+	{
+		numOfDogs=4;
+	}
+	void bark()
+	{
+		
+	}
+}
+class BabyDog extends Dog{
+	protected int numOfBabyDogs;
+	
+	public BabyDog()
+	{
+		numOfBabyDogs=5;
+	}
+	void drink()
+	{
+		
+	}
+}	
+class MyMain extends BabyDog{
+	int total;
+	public MyMain()
+	{
+		total=numOfBabyDogs+numOfDogs+numOfAnimals;
+	}
+	public static void main(String[] args) {
+		MyMain mm=new MyMain();
+	}	
+}
+
+
+no 20
+
+public interface measure {
+		int pounds=5;
+		int ounces=9;
+		int weigh=150;
+		
+		abstract int weight();
+}
+class weight implements measure{
+	private int pound;
+	private int ounce;
+	private int total;
+	public weight()
+	{
+		ounce=Math.abs((ounces*ounces)%16);
+		pound=Math.abs(pounds*pounds)+Math.abs((ounces*ounces)%16);
+	}
+	public int totals()
+	{
+		total=ounce+pound;
+		return 0;
+	}
+	public int weight()
+	{
+		if(total>weigh)
+		{
+			return total;
+		}
+		else
+		{
+			return weigh;
+		}
+	}
+}
+
+
+
+no 23
+
+
+import java.text.SimpleDateFormat;
+
+public class Composition {
+		private int day;
+		private int month;
+		private int year;
+		public Composition(int dr,int mon,int yr)
+		{
+			day=dr;
+			month=mon;
+			year=yr;
+		}
+		public String format()
+		{
+			return (day+"/"+month+"/"+year);
+		}
+
+}
+
+
+class Employe{
+	private int id;
+	private String name;
+	private Composition hireDate;
+	
+	public Employe(int empid,String empname,Composition hidate)
+	{
+		id=empid;
+		name=empname;
+		hireDate=hidate;
+	}
+	String display()
+	{
+		return ("id ="+id+"Name = "+name+"Hiredate = "+hireDate);
+	}
+}
+
+
+day 4
+
+
+import java.util.Map;
+
+public class UserCode {
+	
+	public int absoluteNumber(String s1)
+	{
+		if(s1.matches("-"))
+		{
+			int obj=Integer.parseInt(s1);
+			return obj;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+}
+
+alter
+
+import java.util.Map;
+
+public class UserCode {
+	
+	public int absoluteNumber(String s1)
+	{
+		int n=0;
+		if(s1.matches("-"))
+		{
+			int obj=Integer.parseInt(s1);
+			return obj;
+		
+		if(n<0)
+		{
+			n=Math.abs(obj);
+		}
+		else
+		{
+			 n=-1;
+		}
+		
+		
+	}
+		return n;
+}
+
+
+
+no 6
+
+
+public class UserCode {
+
+	public static int checkForOnlyDigitsInArray(String s[]) {
+		/*
+		 * Given array of string check whether all the elements contains only
+		 * digits not any alaphabets. if condn satisfied print 1 else -1.
+		 * Input:{"123","23.14","1" } 
+		 * Output : 1
+		 */
+		int n=0;
+		for(int i=0;i<s.length;i++)
+		{
+			String a=s[i];
+			char c=a.charAt(i);
+			if(Character.isDigit(c))
+			{
+				n=1;
+			}
+			else
+			
+				n=-1;
+				break;
+				
+			
+		}
+		return n;
+	}
+
+}
+
+
+no  7
+
+import java.util.Scanner;
+
+public class UserCode {
+	
+
+public int getSum(String[] s1) {
+	
+	 	
+   
+	//Find the sum of the numbers in the given input string array
+	/* Input{“2AA”,”12”,”ABC”,”c1a”)
+	 Output:6 (2+1+2+1)*/
+	int sum=0;
+	for(int i=0;i<s1.length;i++)
+	{
+		String s=s1[i];
+		 for(INT j=0;j<s.LENGTH();j++)
+                  {
+		  char c=s.charAt(i)
+		   if(Character.isDigit(c))
+		 {
+				String s2=String.valueOf(c);
+				sum=sum+Integer.parseInt(s2);
+			}
+		}
+	}
+	
+	return sum;	
+}
+}
+
+
+no  8
+
+
+public class UserCode {
+
+	public static String capsStart(String s1) {
+
+		/*
+		 * Convert the 1st letter to UpperCase in all words in the String 
+		 * String a="a very fine day" 
+		 * output:A Very Fine Day
+		 */
+		String words[]=s1.split("\\s");
+		String capitalword="";
+		for(String w:words)
+		{
+			String first=w.substring(0,1);
+			String afterfirst=w.substring(1);
+			capitalword+=first.toUpperCase()+afterfirst+" ";
+		}
+
+		return capitalword.trim();
+	}
+}
+
+
+no  12
+
+
+import java.text.*;
+import java.util.*;
+
+public class UserCode {
+	public static int dateDifference(String s1,String s2) throws ParseException{
+		
+		
+	/*Find the number of days between two input dates.*/
+		int a=0;
+		 SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+		 try{
+			 Date datebefore=myFormat.parse(s1);
+			 Date dateafter=myFormat.parse(s2);
+			 long daybetween=dateafter.getTime()-datebefore.getTime();
+			 float days=(daybetween/(1000*60*60*24));
+			 a=(int)days;
+			 return a; 
+		 }catch(Exception e){
+			 return a; 
+		 }
+}
+}
+
+
+no 14 
+
+
+public class UserCode {
+	public static String removeEvenElements(String s1) {
+		/*input string =commitment;
+		  
+		In above example,
+		c be the first index position 
+		remove even vowels from the string
+		so, output will be cmmitmnt */
+		String newip="";
+		for(int i=0;i<s1.length()/2;i++)
+		{
+		newip=s1.replace("[AEIOUaeiou]","");
+		}
+		return newip;		
+		
+	}
+}
+
+day 5
+
+
+no 6
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class UserCode
+{
+	public String validatePassword(String pass) throws PasswordWeakException 
+	{
+		String s="Valid";
+		/*
+		 * WAP to accept a password as argument and check for special characters in it.
+		 * if not found raise a user defined exception PasswordWeakException with custom message
+		 * "Password Too Weak" else return "Valid".
+		 * */
+		Pattern pattern;
+		String format="(?=.*[@#$%^&+=])";
+		pattern=Pattern.compile(format);
+		Matcher m=pattern.matcher(pass);
+		boolean b=m.find();
+		if(b==false)
+		{
+			throw new PasswordWeakException("Password Too Weak");
+		}
+		return s;
+	}
+}
+
+no 9
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class UserCode 
+{
+	public int countVow(String str)throws VowelNotFoundException
+	{
+		int count = 0;
+		/*
+		 *WAP to accept a string and return the count of vowels in it.
+		 *	If not vowels found in it ,raise an exception called VowelNotFoundException
+		 * */
+		
+		String vowles="(?=.*[AEIOUaeiou])";
+		Pattern p=Pattern.compile(vowles);
+		Matcher m=p.matcher(str);
+		boolean b=m.find();
+		if(b==false)
+		{
+			throw new VowelNotFoundException();
+		}
+		else if(b==true)
+		{
+			for(int i=0;i<str.length();i++)
+			{
+				char ch=str.charAt(i);
+				if(ch == 'a'|| ch == 'e'|| ch == 'i' ||ch == 'o' ||ch == 'u'||ch == 'A'|| ch == 'E'|| ch == 'I' ||ch == 'O' ||ch == 'U')
+				{
+					count++;
+				}
+			}
+				
+		}
+		
+return count;
+		
+		
+		
+	}
+}
+
+
+
+
+
+public class VowelNotFoundException extends Exception {
+		public VowelNotFoundException()
+		{
+			super();
+		}
+		public VowelNotFoundException(String msg)
+		{
+			super(msg);
+		}
+}
+
+
+
+no 10
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class UserCode 
+{
+	public int convertToNumber(String input) throws Exception
+	{
+		int num=0;
+		/*
+		 * 
+		 *WAP to accept a string and convert it into number.
+		 *	If the input string contains characters ,NumberFormatException will be raised handle it in 
+		 *catch block and re throw it with message "String Contain Numbers"
+		 * */
+	//	
+		try{
+			num=Integer.parseInt(input);
+		}catch(NumberFormatException e)
+		{
+			throw  new NumberFormatException("String Contain Numbers");
+		}
+       return num;
+
+}
+}
+
+no 17
+
+public class UserCode 
+{
+	public int findSum(int array[]) throws MyException
+	{
+		int sum=0;
+		/*
+		 * WAP to find the sum of numbers passed as an array.
+		 * If the array contains -ve numbers raise MyException with message "Array Have Negatives"
+		 * If the array contains 0s raise MyException with message "Array Have Zeros"
+		 * Else return the sum.
+		 * */	
+		
+		for(int i=0;i<array.length;i++)
+		{
+			if(array[i]<0)
+			{
+				throw new MyException("Array Have Negatives");
+			}
+			else if(array[i]==0)
+			{
+				throw new MyException("Array Have Zeros");
+			}
+			sum+=array[i];
+		}
+		return sum;
+	}
+}
+
+
+
+
+public class MyException extends Exception {
+		public MyException(String msg)
+		{
+			super(msg);
+		}
+}
+
+
+no 19
+
+
+public class UserCode 
+{
+	public String palindromeWord(String input) throws InvalidStringException
+	{
+		String res="";
+		/*
+		 *WAP to accept a string and check for pallindrome.
+		 *If any digit found inside the string throw an Exception named InvalidStringException.
+		 *with message "Invalid String"
+		 *
+		 *If the string is a pallindrome return "Pallindrome"
+		 *else "Not a Pallindrome"
+		 *
+		 * */
+		for(int j=input.length()-1;j>=0;j--)
+		{
+			res=res+input.charAt(j);
+		
+		if(input.equalsIgnoreCase(res))
+		{
+			return "Pallindrome";
+		}
+		char ch=input.charAt(j);
+		if(Character.isDigit(ch))
+		{
+			throw new InvalidStringException("Invalid String");
+		}
+		
+		}		return "Not a Pallindrome";
+	}
+}
+
+
+no  12
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class UserCode 
+{
+	public int countVow(String input) throws VowelNotFoundException
+	{
+		
+		
+		int count[]=new int[5];
+		int max=count[0];
+		/*
+		 *WAP to accept a string and find maximum repeated vowel count.
+		 *	If no vowels found in it ,raise an exception called VowelNotFoundException
+		 *sample:  tomatto  output : 2
+		 * */
+		String s1="(?=.*[AEIOUaeiou])";
+		Pattern p=Pattern.compile(s1);
+		Matcher m=p.matcher(input);
+		boolean b=m.find();
+		if(b==false)
+		{
+			throw new VowelNotFoundException();
+		}
+		else
+		{
+			for(int i=0;i<input.length();i++)
+			{
+				switch(input.charAt(i))
+				{
+				case 'a':
+					++count[0];
+					break;
+				case 'e':
+					++count[1];
+					break;
+				case 'i':
+					++count[2];
+					break;
+				case 'o':
+					++count[3];
+					break;
+				case 'u':
+					++count[4];
+					break;
+				default:
+					continue;
+				}
+			}
+			for(int i=0;i<4;i++)
+			{
+				if(count[i]>max){
+					max=count[i];
+				}
+			}
+		}
+		return max;
+		
+		
+	}
+}
+
+
+
+no  15
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserCode extends Thread
+{
+	public List<Integer> fillArray(int limit)
+	{
+		List<Integer> out=null;
+		out=new ArrayList<Integer>();
+		/*
+		 * WAP to accept a limit as argument and fill the ArrayList from 1 to that limit.
+		 Rule : Add each element by one second gap. Use Thread.sleep() for the delay.
+		*/
+		
+		for(int i=1;i<=limit;i++)
+		{
+			out.add(i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return out;
+		
+
+		
+
+	}
+}
+
+
+
+day 7
+*******
+
+no 4
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.Arrays;
+
+public class UserCode {
+
+	/*
+	 * Write a Java program to check whether a file having read and write
+	 * permission. Return true if condition satisfies else return false
+	 */
+
+	public static Boolean readWritePermission(String filePath) {
+
+		File fl=new File(filePath);
+		boolean b1=fl.canRead();
+		boolean b2=fl.canWrite();
+		if(b1==true && b2==true){
+			return true;
+		}
+		return false;
+	}
+
+}
+
+
+
+
+no  6
+
+
+import java.io.File;
+import java.util.Calendar;
+
+public class UserCode {
+
+	/*
+	 * Write a Java program to get last modified date, month and year of a file
+	 */
+
+	public static int fileLastModifiedDate(String filePath) {
+
+		// Enter your code here
+		
+		File f1=new File(filePath);
+		long l1=f1.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(l1);
+		int d=cal.get(Calendar.DATE);
+		return d;
+		
+	}
+
+	public static int fileLastModifiedMonth(String filePath) {
+
+		// Enter your code here
+		
+		File f1=new File(filePath);
+		long l1=f1.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(l1);
+		int d=cal.get(Calendar.MONTH);
+		return d+1;
+
+		
+	}
+
+	public static int fileLastModifiedYear(String filePath) {
+		// Enter your code here
+
+		File f1=new File(filePath);
+		long l1=f1.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(l1);
+		int d=cal.get(Calendar.YEAR);
+		return d;
+	}
+
+}
+
+
+no  7
+
+
+import java.io.File;
+import java.util.Calendar;
+
+public class UserCode {
+
+	/*
+	 * Write a Java program to get last modified date, month and year of a file
+	 */
+
+	public static int fileLastModifiedDate(String filePath) {
+
+		// Enter your code here
+		
+		File f1=new File(filePath);
+		long l1=f1.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(l1);
+		int d=cal.get(Calendar.DATE);
+		return d;
+		
+	}
+
+	public static int fileLastModifiedMonth(String filePath) {
+
+		// Enter your code here
+		
+		File f1=new File(filePath);
+		long l1=f1.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(l1);
+		int d=cal.get(Calendar.MONTH);
+		return d+1;
+
+		
+	}
+
+	public static int fileLastModifiedYear(String filePath) {
+		// Enter your code here
+
+		File f1=new File(filePath);
+		long l1=f1.lastModified();
+		Calendar cal=Calendar.getInstance();
+		cal.setTimeInMillis(l1);
+		int d=cal.get(Calendar.YEAR);
+		return d;
+	}
+
+}
+
+
+
+no  8
+
+
+
+
+import java.io.File;
+
+
+public class UserCode {
+
+	/*
+	 * Write a Java program to get file size in bytes, Kb and mb and return it
+	 * (return 0 if file doesn't exist)
+	 */
+
+	public static long fileSizeInBytes(String filePath) {
+
+		// Enter your code here
+		
+		File f1=new File(filePath);
+		if(f1.exists()){
+			long bytes=f1.length();
+			return bytes;
+		}
+
+		return 0;
+	}
+
+	public static long fileSizeInKb(String filePath) {
+
+		File f1=new File(filePath);
+		if(f1.exists()){
+			long kilobytes=(f1.length())/1024;
+			return kilobytes;
+		}
+
+		return 0;
+	}
+
+	public static long fileSizeInMb(String filePath) {
+
+		File f1=new File(filePath);
+		if(f1.exists()){
+			long mb=((f1.length())/1024)/1024;
+			return mb;
+		}
+
+		return 0;
+	}
+}
+
+
+
+no  9
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+
+public class UserCode {
+	
+	public StringBuffer readStreamOfLinesUsingFiles(String in) throws Exception{
+	
+		
+		//Write a Java program to read a file content line by line.
+		File file=new File(in);
+		FileReader filereader=new FileReader(file);
+		BufferedReader bufferedreader=new BufferedReader(filereader);
+		StringBuffer stringbuffer=new StringBuffer();
+		String line;
+		while((line=bufferedreader.readLine())!=null)
+		{
+			stringbuffer.append(line);
+			stringbuffer.append("\n");
+			
+		}filereader.close();
+		
+
+	return stringbuffer;
+}            
+       
+}
+
+
+no  10
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class UserCode {
+
+	public StringBuffer readtextfile(String read) throws Exception {
+		
+		StringBuffer stringbuffer=new StringBuffer();
+		String text=null;
+		
+		if(read.toLowerCase().endsWith(".txt")){
+					
+		FileReader filereader=new FileReader(read);
+		BufferedReader bufferedreader=new BufferedReader(filereader);
+		
+	
+			while((text=bufferedreader.readLine())!=null)
+			{
+				stringbuffer.append(text);
+				stringbuffer.append(System.lineSeparator());
+
+			}
+		}else
+			throw new FileNotFoundException("File not Found");
+
+return stringbuffer;
+	
+}            
+       
+}
+
+
+no 11
+
+/**
+ * 
+ */
+
+
+import java.io.BufferedReader;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+
+
+public class UserCode {
+public String data(String input) throws Exception
+{
+
+	
+	//Write a Java program to read a file line by line and store it into a variable.
+	//if File not Found,raise Exception with message "File not Found".
+	String output="";
+	
+
+	try{
+	BufferedReader bufferedreader=new BufferedReader(new FileReader(input));
+
+	String line="";
+	while((line!=null))
+	{  
+		output+=line;
+		line=bufferedreader.readLine();
+	
+		
+	}
+	bufferedreader.close();
+	}catch(FileNotFoundException e){
+
+    
+    	throw new FileNotFoundException("File not Found");
+	}
+return output;
+}
+}
+
+
+
+no 12
+
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+
+// Write a Java program to read text file content line by line and store into a list
+
+
+public class UserCode {
+
+	public static List<String> readLineArray(String input) throws IOException
+	{
+		StringBuilder sb = new StringBuilder();
+       
+        List<String> list = null;
+        
+      
+        	list=Files.readAllLines(Paths.get(input),StandardCharsets.UTF_8);
+    
+			
+		return list;
+		
+	}
+}
+
+
+no 13
+
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+//Write a Java program to find the longest word in a text file.
+//Output will be the last occurrence of the longest word
+public class UserCode {
+	public static String findLongestWord(String input) throws FileNotFoundException {
+	
+		//Enter your code here	
+		
+		String largestword="";
+		String current="";
+		Scanner sc=new Scanner(new File(input));
+		
+		while(sc.hasNext()){
+			current=sc.next();
+			if(current.length()>largestword.length()){
+				largestword=current;
+			}
+		}
+		
+		
+		return largestword;
+
+	}
+}
+
+
+no  15
+
+
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+
+//Write a Java program to read first 3 lines from a file and store it in array.
+public class UserCode {
+	public static String[] readFirstThreeLines(String input) throws IOException {
+
+		// Enter your code here
+
+		String a[]=new String[3];
+		String s="";
+		
+		
+			LineNumberReader reader=new LineNumberReader(new InputStreamReader(new FileInputStream(input)));
+			while(((s=reader.readLine())!=null)&&reader.getLineNumber()<=3){
+				a=s.split("\n");
+			}
+		
+		
+		return a;
+	}
+
+}
+
+
+no 17
+
+
+
+
+ * 
+ */
+
+
+import java.awt.Desktop;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.Arrays;
+
+
+public class UserCode {
+	public String[] executeURL(String urlPath) throws MalformedURLException, URISyntaxException{
+	
+		//Write a Java program to execute an url and return informtion such as URL string, Authority, Host, Path, Port and RawPath.
+		//urlArray size must be 6
+		
+		String[] surl=new String[6];
+
+		
+		URI u1=new URI(urlPath);
+		int i=u1.getPort();
+		String s1=String.valueOf(i);
+		
+		surl[0]=u1.toString();
+		surl[1]=u1.getAuthority();
+		surl[2]=u1.getHost();
+		surl[3]=u1.getPath();
+		surl[4]=s1;
+		surl[5]=u1.getRawPath();
+		
+		
+		return surl;
+	}
+
+}
+
+
+no 23
+
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
+
+public class UserCode {
+
+	/*
+	 * Write a Java program to count the total number of lines in a file
+	 */
+
+	public static int getNumberOfLinesInFile(String filePath) throws IOException {
+	
+		 FileReader fr = new FileReader(filePath);
+		    LineNumberReader lnr = new LineNumberReader(fr);
+		    
+		    int linenumber = 0;
+		    
+	            while (lnr.readLine() != null){
+	        	linenumber++;
+	            }
+
+		return linenumber;
+
+	}
+
+}
+
+no 24
+
+
+import java.io.File;
+
+public class UserCode {
+	public static String getEmptyDirectoryName(String filePath) {
+		
+		File file=new File(filePath);
+		if(file.isDirectory()){
+			String[] files=file.list();
+			if(files.length <= 0){
+				return file.getName();
+			}else
+			{
+				return  "Its not an empty Directory";
+			}
+		}
+		
+		return null;
+		
+	}
+}
+
+
+day  8
+
+
+
+no  1
+
+
+import java.util.*;
+
+public class UserCode {
+	public static int retrieveMaxFromOddIndex(int[] a) {
+		/*
+		 * Retrieve the max from array which is in a odd-index
+		 */
+		
+		
+		
+		List<Integer> list=new ArrayList<>(a.length);
+		for(int i:a){
+			list.add(Integer.valueOf(i));
+		}
+		
+		
+		if(list.size()<=1){
+			return 0;
+		}else{
+			int max=list.get(1);
+			for(int i=1;i<list.size();i+=2){
+				
+				if(list.get(i)>list.get(1)){
+					max=list.get(i);
+				}
+				
+				
+						}
+				
+			
+			
+		return max;
+		}
+}
+}
+
+
+no 3
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserCode
+{
+	public static int[] commonSet(List<Integer> l1, List<Integer> l2) {
+		/*
+		 * Write a program to collect numbers from list1 which is not present in list2 and collection numbers from list2 which is not present in list1 and store it in an output array. 
+		 * Eg: 
+		 * Input1={1,2,3,4} 
+           Input2={1,2,3,5}
+
+           Output= {4,5}   
+		 */
+		
+	List<Integer> list=new ArrayList<>(l1);
+	list.removeAll(l2);
+	List<Integer> list2=new ArrayList<>(l2);
+	list.removeAll(list2);
+	
+	
+	int i=0;
+	int[] result=new int[list.size()];
+	for(int num:list){
+		result[i++]=num;
+	}
+		
+	
+	
+		return result;
+		
+	
+	}
+	
+}
+
+
+no 4
+
+
+import java.util.*;
+
+public class UserCode {
+	public static float getTheTotalCostOfPheripherals(HashMap<String, String> m1, String[] s) {
+		/*
+		 * Input HashMap HashMap<String,String>
+		 * input1={"mouse":"100.2","speaker":"500.6","Monitor":"2000.23"};
+		 * String[] s={"speaker","mouse"};
+		 * compare the given string array with Keyset in Map add the values of Corresponding Keyset, 
+		 * output in Float value=600.80(500.6+100.2);
+		 */
+		
+		
+		Set<String> mapset=m1.keySet();
+		Iterator<String> mapkey=mapset.iterator();
+		float f=0;
+		while(mapkey.hasNext()){
+			String key=mapkey.next();
+			
+			float fd=Float.parseFloat(m1.get(key));
+			for(int i=0;i<s.length;i++){
+				if(s[i].equals(key)){
+				f=f+fd;
+				}
+			}
+		}
+		
+		return f;
+	}
+}
+
+no  5
+
+
+import java.util.*;
+
+public class UserCode {
+	public static int fetchingKeysDivisibleByFour(Map<Integer, String> m1) {
+		/*Input a hashmap. Count the keys which are not divisible by 4 and return.
+		
+		 */
+		
+		Set<Integer> mapset=m1.keySet();
+		Iterator<Integer> mapkey=mapset.iterator();
+		
+		int sum=0;
+		while(mapkey.hasNext()){
+			int key=mapkey.next();
+	
+			if(key%4!=0){
+				sum++;
+			
+		}
+		}
+		
+	return sum;
+	}
+
+}
+
+
+no 7
+
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.StringTokenizer;
+
+
+
+public class UserCode {
+
+	public static String retrieveMaxScoredStudent(String s1[]) {
+
+		
+		/* * arraylist of string type which has name#mark1#mark2#mark3 format.
+		 * retrieve the name of the student who has scored max marks(total of
+		 * three) 
+		 * input:{"arun#12#12#12","deepak#13#12#12"} output:deepak*/
+		 
+		int total=0;
+		String sum3="";
+		for(int i=0;i<s1.length;i++){
+			String s2=s1[i];
+			String[] split=s2.split("#");
+			String sum0=split[0];
+			String sum=split[1];
+			String sum1=split[2];
+			String sum2=split[3];
+			
+			int max=Integer.parseInt(sum)+Integer.parseInt(sum1)+Integer.parseInt(sum2);
+			if(max>=total){
+				sum3=sum0;
+				total=max;
+			}			
+		}
+			
+		return sum3;
+
+	}
+
+}
+
+no  8
+
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class UserCode {
+
+
+	public static Map<String,String> examResult(Map<String, Integer> m1) {
+		
+		
+	/*	Create a Hashmap accepting String and Integer values
+	  
+	    HashMap<String,Integer> h1={“abc”:50,”efg”:70};
+	    
+	    if the mark is less than 60 make it fail else make it pass.
+	    Put the output in ascending order
+	    
+	    HashMap<String,String> m2={“abc”:”fail”,”efg”:”pass”}.
+	    
+	  
+	    */
+		Map<String,String> m2=new HashMap<String,String>();
+		Set<String>mapset=m1.keySet();
+		Iterator<String>mapkey=mapset.iterator();
+		
+		String s1="PASS";
+		String s2="FAIL";
+		
+		
+		while(mapkey.hasNext()){
+			String key=mapkey.next();
+			if(m1.get(key)<60){
+				m2.put(key, s2);
+			}else
+			{
+				m2.put(key, s1);
+			}
+		}
+	    
+		return m2;
+	}
+	
+}
+
+no 9
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class UserCode {
+
+	
+	public static String[] loweringCasenReverseofaString(String ip1, char ip2){
+		
+		
+/*		 input-- String input1="AAA/abb/CCC"
+				    char input2='/'
+				    output should be as String[] output1;
+				    output1[]={"aaa","bba","ccc"};
+
+				    operation-- get the strings from input1  using stringtokenizer
+				                reverse each string
+				                then to lower case
+				                finally store it in output1[] string array
+*/	
+		String s1=Character.toString(ip2);	                
+		StringTokenizer str=new StringTokenizer(ip1,s1);
+		List<String> arr=new ArrayList<String>();
+		String[] f=null;
+
+		while(str.hasMoreTokens()){
+			StringBuffer sb=new StringBuffer(str.nextToken().toLowerCase());
+		//	sb.reverse();
+			arr.add(sb.reverse().toString());
+			f=new String[arr.size()];
+			for(int i=0;i<arr.size();i++){
+				f[i]=arr.get(i);
+			}
+			
+		}
+		
+		
+		
+		
+		return f;
+	
+	}
+	
+}
+
+
+
+no  11
+
+
+import java.util.*;
+public class UserCode {
+
+	public static int sumOfEvenNos(int[] a) {
+
+		/*
+		 * Given integer array 
+		 * input :int[] arr={2,3,5,4,1,6,7,7,9}; 
+		 * output : 12
+		 * 
+		 * Remove the duplicate elements and print sum of even numbers in the
+		 * array.. print -1 if arr contains only odd numbers
+		 */
+
+		int sum=0;
+		int count=0;
+		Set<Integer> str=new TreeSet<Integer>();
+		for(int i=0;i<a.length;i++){
+			str.add(a[i]);
+		}
+		
+		for(int num:str){
+			if(num%2==0){
+				sum=sum+num;
+			}else{
+				count++;
+			}
+		}
+		if(count==str.size()){
+			return -1;
+		}
+		
+	
+		
+	return sum;
+	}
+
+}
+
+no  12
+
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class UserCode {
+
+
+	public static String[] fruitsList(List<String> l1, List<String> l2){
+		
+		
+		/*
+		input1-List1-{apple,orange,grapes}
+	    input2-List2-{melon,apple,mango}
+	    output={mango,orange}
+	    operation-- In 1st list remove strings starting with 'a' or 'g'
+	                In 2nd list remove strings ending with 'n' or 'e'
+	    Ignore case, sort & return in string array*/
+	    		
+		
+		
+		for(int i=0;i<l1.size();i++){
+			String s=l1.get(i);
+			if(s.startsWith("a")){
+				l1.remove(s);
+			}else if(s.startsWith("g")){
+				l1.remove(s);
+			}
+		}
+		for(int j=0;j<l2.size();j++){
+			String s1=l2.get(j);
+			if(s1.endsWith("n")){
+				l2.remove(s1);
+			}else if(s1.endsWith("e")){
+				l2.remove(s1);
+			}
+		}
+		l1.addAll(l2);
+		
+		String[] fin=new String[l1.size()];
+		
+		for(int k=0;k<l1.size();k++){
+			fin[k]=l1.get(k);
+		}
+		
+		return fin;
+		
+	
+}
+}
+
+
+no  15
+
+
+import java.util.*;
+
+public class UserCode {
+	public static int additionOfnonPrimeNos(int i, int j){
+	/*
+	 * Retrieve the non-prime numbers within the range of a given input.
+	 * Add-up the non-prime numbers and return the result.
+	 Input Range: 0 to 10
+	 Result: 38*/
+		
+		int count=0;
+		int sum=0;
+		for(int x=i;x<=j;x++){
+			for(int y=2;y<x;y++){
+				if(x%y==0){
+					count=0;
+					break;
+				}
+				else
+				{
+					count=1;
+				}
+			}
+			if(count==0){
+				sum+=x;
+			}
+		}
+		
+		
+				return sum;
+		
+	}
+}
+
+
+no  17
+
+
+import java.text.DecimalFormat;
+import java.util.*;
+
+public class UserCode {
+	public static float avgOfEvenKeyValues(Map<Integer, Float> m1) {
+		
+		
+		/*  Input is a map<Integer,Float> {1:2.3,2:5.6,3:7.7,4:8.4}
+		    Get the Even number from keys and find the average of values of these keys.
+		    Answer should be rounded to two numbers after decimal
+		    eg:- if the output number is 15.2499999,it should be rounded upto 15.25
+		 * 
+		 */
+				
+		
+
+				Set<Integer> keyset=m1.keySet();
+				Iterator<Integer> it=keyset.iterator();
+				int count=0;
+				float sum=0;
+				float avg=0;
+				while(it.hasNext()){
+					int i=it.next();
+					if(i%2==0)
+					{
+						
+						sum=(float)(sum+m1.get(i));
+						count++;
+					}
+					
+					
+				}
+				avg=sum/count;
+				
+				double val=Math.round(avg*100)/100.00;
+	
+			    return (float)val;
+
+	}
+
+}
+
+
+no  18
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class UserCode {
+
+	public static Map<String, String> uppercase(String[] temp) {
+		
+		/*Create a program to get the hashmap in ascending order from the given input string array 
+		 * where the key for the hashmap is first three letters of array element 
+		 * in uppercase and the value of hashmap is the element itself
+		 
+		 * Input:{“goa”,”kerala”,”gujarat”}                 [string array]
+   		   Output:{{GOA,goa},{KER,kerala},{GUJ,Gujarat}}    [hashmap]
+	*/	
+		
+		
+		HashMap<String, String> hm = new HashMap<String, String>();
+		ArrayList<String> lst1 = new ArrayList<String>();
+		ArrayList<String> lst2 = new ArrayList<String>();
+		for(String s : temp)
+		lst1.add(s.toUpperCase().substring(0,3));
+		for(String s : temp)
+		lst2.add(s);
+		for(int i=0;i<temp.length;i++)
+		{
+		hm.put(lst1.get(i),lst2.get(i));
+
+				
+		
+	}
+		return hm;
+	
+}}
+
+
+no  19
+
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class UserCode {
+
+	
+	public static int avgValuesOfOddKeys(Map<Integer, Integer> m1) {
+		
+		
+	/*	In a hashmap if key is odd then find average of value as integer
+	 * 
+	    ex1:Input={1:4,2:6,4:7,5:9}
+	        output=(4+9)/2
+	    ex2:Input={1:4,3:6,4:7,5:9}
+	        output=(4+6+9)/3
+	    
+	    If all the keys in input are given as even. Then return 0;
+	 */    
+	        
+		
+		
+		int avg=0,sum=0,count=0;
+		for(Map.Entry m:m1.entrySet()){
+			int a=(int)m.getKey();
+			if(a%2!=0){
+				int d=(int)m.getValue();
+				sum=sum+d;
+				count++;
+			}
+		}
+	        		avg=sum/count;
+		return avg;
+	
+	}
+	
+}
+
+
+day 9
+*****
+
+
+no  3
+
+
+import javax.swing.JFrame;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+				/*
+				 * Write a Program to Make a Frame with title "Sparta".
+				 * Make sure that when you click the close button on frame , the frame getting closed.
+				 * Hint : Use JFrame class in swing package . use the setDefaultCloseOperation method of Frame.
+				 * */
+				
+				
+				JFrame frame=new JFrame("Sparta");
+		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		        frame.setVisible(true);
+
+				
+				
+
+			}
+}
+
+
+no 4
+
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add a Label
+				 */
+				
+				JFrame frame=new JFrame("rio");
+				JPanel panel=new JPanel();
+				panel.setLayout(new GridLayout());
+				
+				JLabel label=new JLabel("welcom rio");
+				panel.add(label);
+				frame.add(panel);
+				
+				frame.setVisible(true);
+				
+				
+				
+		
+			}
+}
+
+
+no  5
+
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add a Label and TextField
+				 */
+			
+				
+				JFrame frame=new JFrame("rio");
+				JPanel panel=new JPanel();
+				JLabel label=new JLabel("Hiii");
+				JTextField textfiel=new JTextField(20);
+				panel.add(label);
+				panel.add(textfiel);
+				frame.add(panel);
+				frame.setVisible(true);
+				
+				
+				
+				
+			}
+}
+
+
+no  6
+
+import java.awt.BorderLayout;
+
+import javax.swing.Box;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Add a Label and TextField and PasswordField
+				 */
+				
+				
+				JFrame frame=new JFrame("login");
+				JPanel panel=new JPanel();
+				
+				
+				
+				JLabel label=new JLabel("TextField");
+				JTextField txtfiels=new JTextField(20);
+				label.setLabelFor(txtfiels);
+				
+				JLabel label1=new JLabel("Password");
+				JPasswordField pass=new JPasswordField(20);
+				label1.setLabelFor(pass);
+				
+
+				
+				panel.add(label);
+				panel.add(txtfiels);
+				panel.add(label1);
+				panel.add(pass);
+				frame.add(panel);
+				
+		     
+
+				frame.setVisible(true);
+				
+		
+			}
+}
+
+
+no  14
+
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode  
+{
+	
+
+
+			public void makeFrame()
+			
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Create a Login Screen
+				 * Use GridLayOut to arrange the items in row column format.
+				 * When you click on the login button if name is "sa" and password is "pass" display a dialog box with "Valid User"
+				 */
+				
+				JFrame frame=new JFrame("Sparta");
+				JPanel panel=new JPanel();
+				JLabel l1=new JLabel("Name");
+				JLabel l2=new JLabel("Password");
+				JTextField f1=new JTextField(20);
+				JPasswordField p1=new JPasswordField(20);
+				JLabel l3=new JLabel();
+				JButton but=new JButton("Login");
+				
+				panel.add(l1);
+				panel.add(f1);
+				panel.add(l2);
+				panel.add(p1);
+				panel.add(l3);
+				panel.add(but);
+				
+				panel.setLayout(new GridLayout(3, 2));
+				frame.add(panel);
+				frame.setSize(300, 300);
+				frame.setVisible(true);
+				
+				but.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						String s1=f1.getText();
+						String s2=p1.getText();
+						if(s1.equals("sa")&&s2.equals("pass")){
+						
+						JOptionPane.showMessageDialog(frame, "Valid User");
+						}
+					}
+				});
+		
+			}
+
+}
+
+
+no   16
+
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+			public void makeFrame()
+			{
+			
+				/*
+				 * Write a Program to Make a Frame Screen According to the Expected Result.
+				 * Create a Login Screen
+				 * Use GridLayOut to arrange the items in row column format.
+				 * When you click on the login button if name id "sa" and password is "pass" display a dialog box with "Valid User"
+				 * else display "Invalid User";
+				 * When u click on reset button make the fields blank.
+				 */
+				
+				
+				JFrame frame=new JFrame("Sparta");
+				JPanel panel=new JPanel();
+				JLabel l1=new JLabel("Name");
+				JLabel l2=new JLabel("Password");
+				JTextField f1=new JTextField(20);
+				JPasswordField p1=new JPasswordField(20);
+				JButton l3=new JButton("Reset");
+				JButton but=new JButton("Login");
+				
+				panel.add(l1);
+				panel.add(f1);
+				panel.add(l2);
+				panel.add(p1);
+				panel.add(l3);
+				panel.add(but);
+				
+				panel.setLayout(new GridLayout(3, 2));
+				frame.add(panel);
+				frame.setSize(300, 300);
+				frame.setVisible(true);
+				
+				but.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						String s1=f1.getText();
+						String s2=p1.getText();
+						if(s1.equals("sa")&&s2.equals("pass")){
+						
+						JOptionPane.showMessageDialog(frame, "Valid User");
+						}else
+							JOptionPane.showMessageDialog(frame, "Invalid User");
+
+					}
+				});
+				
+				l3.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						f1.setText("");
+						p1.setText("");
+						
+					}
+				});
+		
+			}
+
+}
+
+
+no  20
+
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.print.attribute.standard.JobName;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class UserCode 
+{
+	/*
+	 *  Write a Program to Make a Calculator Screen According to the Expected Result.
+				 Create Calculator Screen to perform Add,sub,Mult,Div.
+				 * Use GridLayOut to arrange the items in row column format.
+				 Hint :  Implement Interface "ActionListener",add all the swing components inside constructor.
+	 */
+	public  UserCode() {
+		
+		
+		JFrame frame=new JFrame("Calculator");
+		JPanel panel =new JPanel();
+		
+		
+		JLabel l1=new JLabel("input1");
+		JTextField f1=new JTextField(15);
+		JLabel l2=new JLabel("input2");
+		JTextField f2=new JTextField(15);
+		JLabel l3=new JLabel("Result");
+		JTextField f3=new JTextField(15);
+		
+		JButton b1=new JButton("Add");
+		JButton b2=new JButton("sub");
+		JButton b3=new JButton("mul");
+		JButton b4=new JButton("div");
+		
+		panel.add(l1);
+		panel.add(f1);
+		panel.add(l2);
+		panel.add(f2);
+		panel.add(l3);
+		panel.add(f3);
+		panel.add(b1);
+		panel.add(b2);
+		panel.add(b3);
+		panel.add(b4);
+		
+		panel.setLayout(new GridLayout(5, 2));
+		
+		frame.add(panel);
+		frame.setSize(300, 300);
+		frame.setVisible(true);
+				
+		b1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				int a=Integer.parseInt(f1.getText())+Integer.parseInt(f2.getText());
+				f3.setText(""+a);
+			
+				
+			}
+		});
+		
+		b2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int a=Integer.parseInt(f1.getText())-Integer.parseInt(f2.getText());
+				f3.setText(""+a);
+				
+			}
+		});
+	
+		b3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				int a=Integer.parseInt(f1.getText())*Integer.parseInt(f2.getText());
+				f3.setText(""+a);
+				
+			}
+		});
+		
+		b4.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				int a=Integer.parseInt(f1.getText())/Integer.parseInt(f2.getText());
+				f3.setText(""+a);
+				
+			}
+		});
+	}
+}
+
+
+day 10
+
+
+no 1
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","root","dsrc");
+			Statement stm=con.createStatement();
+			stm.execute("create table Employee (EmpNo int primary key,FirstName varchar(20),LastName varchar(20))");
+			
+			
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no  2
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+	    	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+	    	Statement stm=con.createStatement();
+	    	stm.execute("create table Department (DeptNo int primary key,DeptName varchar(20),Location varchar(20))");
+	    	
+	    	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no  3
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+	    	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+	    	Statement stm=con.createStatement();
+	    	stm.execute("create table LeaveInfo (EmpNo int,FromDate varchar(20),ToDate varchar(20))");
+	    	
+	    	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no  4
+
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+	    	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+	    	PreparedStatement ps=con.prepareStatement("insert into Employee values(?,?,?)");
+	    	ps.setInt(1, id);
+	    	ps.setString(2, Fname);
+	    	ps.setString(3, Lname);
+	    	int x=ps.executeUpdate();
+	    	if(x!=0)
+	    	{
+	    	isDone=true;
+	    	}
+	    	    	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+no  5
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+	    	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+	    	PreparedStatement ps=con.prepareStatement("insert into Employee(EmpNo) values(?)");
+	    	ps.setInt(1, id);
+	    	int x=ps.executeUpdate();
+	    	if(x!=0)
+	    	{
+	    	isDone=true;
+	    	}
+	    	    	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no 6
+
+
+	main
+		
+	import java.util.Scanner;
+
+public class MyMain {
+
+	public static void main(String[] args) 
+	{
+			UserCode uu=new UserCode();
+			// Call the method 
+			
+			Scanner sc=new Scanner(System.in);
+			int id=sc.nextInt();
+			String Fname=sc.next();
+			System.out.println(uu.updateRecord(id, Fname));
+			
+			
+	}
+
+}
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+	    	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+	    	PreparedStatement ps=con.prepareStatement("update Employee set FirstName=? where Empno=?");
+	    	
+	    	ps.setString(1, name);
+	    	ps.setInt(2, empno);
+	    	
+	    	int x=ps.executeUpdate();
+	    	if(x!=0)
+	    	{
+	    	isDone=true;
+	    	}
+	    	    	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+
+no  7
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+	    	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+	    	PreparedStatement ps=con.prepareStatement("update Employee set LastName=? where Empno=?");
+	    	
+	    	ps.setString(1, name);
+	    	ps.setInt(2, empno);
+	    	
+	    	int x=ps.executeUpdate();
+	    	if(x!=0)
+	    	{
+	    	isDone=true;
+	    	}
+	    	    	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+no  8
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+	    	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+	    	PreparedStatement ps=con.prepareStatement("update Employee set FirstName=?,LastName=? where Empno=?");
+	    	
+	    	ps.setString(1, FirstName);
+	    	ps.setString(2, LastName);
+	    	ps.setInt(3, empno);
+	    	
+	    	int x=ps.executeUpdate();
+	    	if(x!=0)
+	    	{
+	    	isDone=true;
+	    	}
+	    	    	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+		
+		return isDone;
+
+
+no 9
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			
+			PreparedStatement ps=con.prepareStatement("select FirstName from Employee where EmpNo=?");
+			ps.setInt(1, empno);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+				fName=rs.getString(1);
+			}
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+no  10
+
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			
+			PreparedStatement ps=con.prepareStatement("select LastName from Employee where EmpNo=?");
+			ps.setInt(1, empno);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+				lName=rs.getString(1);
+			}
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no 11
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			PreparedStatement st=con.prepareStatement("select FirstName,LastName from Employee where EmpNo=?");
+			st.setInt(1, empno);
+			ResultSet rs=st.executeQuery();
+			while(rs.next()){
+				fName=rs.getString(1);
+				lName=rs.getString(2);
+			}
+			
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
+  
+		return fName+lName;
+}
+
+no 12
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			PreparedStatement ps=con.prepareStatement("alter table Employee add " + columnName + " varchar(20)");
+		
+			ps.execute();
+			
+			isDone=true;
+			
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no  13
+
+
+	     try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/world","root","dsrc");
+			for(String i:columnName){
+				PreparedStatement ps=con.prepareStatement("alter table Employee add " + i + " varchar(20)");
+				ps.execute();
+				isDone=true;
+			}
+	
+			
+			
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no  14
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			PreparedStatement ps=con.prepareStatement("delete from Employee where EmpNo=?");
+			ps.setInt(1, empno);
+			ps.executeUpdate();
+			isDone=true;
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no  15
+
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			PreparedStatement ps=con.prepareStatement("update employee set lastname=null where empno=?");
+			ps.setInt(1, empno);
+			ps.executeUpdate();
+			isDone=true;
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+no  16
+
+      	try {
+    			Class.forName("com.mysql.jdbc.Driver");
+    			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+    			PreparedStatement ps=con.prepareStatement("insert into department values(?,?,?)");
+    			ps.setInt(1, deptno);
+    			ps.setString(2, deptName);
+    			ps.setString(3, Location);
+    			ps.execute();
+    			isDone=true;
+    			
+    			
+    			
+    		} catch (ClassNotFoundException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		} catch (SQLException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
+no 17
+
+
+      	try {
+    			Class.forName("com.mysql.jdbc.Driver");
+    			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+    			PreparedStatement ps=con.prepareStatement("insert into department(deptno,location) values(?,?)");
+    			ps.setInt(1, deptno);
+    			
+    			ps.setString(2, Location);
+    			ps.execute();
+    			isDone=true;
+    			
+    			
+    			
+    		} catch (ClassNotFoundException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		} catch (SQLException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
+
+no  18
+
+    	temp=new ArrayList<String>();
+    	
+      	try {
+    			Class.forName("com.mysql.jdbc.Driver");
+    			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+    			PreparedStatement ps=con.prepareStatement("select FirstName from employee where job=?");
+    			ps.setString(1, job);
+    			ResultSet rs=ps.executeQuery();
+    			while(rs.next()){
+    				temp.add(rs.getString(1));
+    			}
+    	
+    		
+    		
+    			
+    			
+    			
+    			
+    		} catch (ClassNotFoundException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		} catch (SQLException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
+
+no 19
+
+    	temp=new TreeMap<Integer, String>();
+    	
+    	
+      	try {
+    			Class.forName("com.mysql.jdbc.Driver");
+    			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+    			PreparedStatement ps=con.prepareStatement("select EmpNo,FirstName from Employee");
+    			ResultSet rs=ps.executeQuery();
+    			
+    			while(rs.next()){
+    				int i=rs.getInt(1);
+    				String s=rs.getString(2);
+    				temp.put(i, s);
+    			}
+    			
+    	
+			
+    			
+    		} catch (ClassNotFoundException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		} catch (SQLException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
+no 20
+
+
+    	
+    	temp=new TreeMap<Integer, String>();
+    	
+    	
+      	try {
+    			Class.forName("com.mysql.jdbc.Driver");
+    			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+    			PreparedStatement ps=con.prepareStatement("select Empno,FirstName from employee where FirstName like 'A%'");
+    			ResultSet rs=ps.executeQuery();
+    			
+    			while(rs.next()){
+    				int i=rs.getInt(1);
+    				String s=rs.getString(2);
+    				temp.put(i, s);
+    			}
+    			
+    	
+			
+    			
+    		} catch (ClassNotFoundException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		} catch (SQLException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
+
+no  21
+
+      	try {
+    			Class.forName("com.mysql.jdbc.Driver");
+    			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+    			PreparedStatement ps=con.prepareStatement("insert into department values(?,?,?)");
+    			ps.setInt(1, depNo);
+    			ps.setString(2, deptName);
+    			ps.setString(3, loc);
+    			ps.execute();
+    			isDone=true;
+    		
+    			
+    			
+    	
+			
+    			
+    		} catch (ClassNotFoundException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		} catch (SQLException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
+
+no  22
+
+         
+       	try {
+     			Class.forName("com.mysql.jdbc.Driver");
+     			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+     			PreparedStatement ps=con.prepareStatement("update department set deptname=? where deptno=?");
+     			ps.setString(1, deptName);
+     			ps.setInt(2, deptNo);
+     			ps.executeUpdate();
+     			isDone=true;
+  
+     			
+     			
+     	
+ 			
+     			
+     		} catch (ClassNotFoundException e) {
+     			// TODO Auto-generated catch block
+     			e.printStackTrace();
+     		} catch (SQLException e) {
+     			// TODO Auto-generated catch block
+     			e.printStackTrace();
+     		}
+
+
+no 23
+
+    	temp=new ArrayList<String>();
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			PreparedStatement ps=con.prepareStatement("select deptname from department where location=?");
+			ps.setString(1, loc);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+			temp.add(rs.getString(1));
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+no  24
+
+    	temp=new TreeMap<Integer, String>();
+    	try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+			PreparedStatement ps=con.prepareStatement("select deptno,deptname from department where deptname like 'c%l'");
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+				int i=rs.getInt(1);
+				String s=rs.getString(2);
+				temp.put(i, s);
+			}
+			
+		
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+no  25
+
+	    	
+	    	try {
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/tempdb","root","dsrc");
+				for(int i=0;i<columnName.length;i++){
+				PreparedStatement ps=con.prepareStatement("alter table department add "+columnName[i]+" varchar(20)");
+				ps.executeUpdate();
+				}
+				isDone=true;
+			
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
